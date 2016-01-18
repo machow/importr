@@ -5,5 +5,7 @@ Version: 0.1.0
 Authors@R: person("Michael", "Chow", email = "machow@princeton.edu", role = c("aut", "cre"))
 Description: importr allows for much of what R packaging does without the hassel.
 License: MIT
-Suggests: MASS
+Suggests: 
+    MASS,
+    testthat
 LazyData: TRUE
