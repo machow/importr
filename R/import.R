@@ -29,15 +29,17 @@ new_env_chain <- function(from) {
   imports <- new.env(parent=depends)
   imports$library <- function(package, ...){
     pkg_name = as.character(substitute(package))
-    message(paste0('calling local require function for package: ', pkg_name))
+    message(paste0('calling local library function for package: ', pkg_name))
     ns <- loadNamespace(pkg_name, ...)
     mergeEnv(depends, ns)
+    assign(pkg_name, ns, envir=imports)
   }
   imports$require <- function(package, ...){
     pkg_name = as.character(substitute(package))
     message(paste0('calling local require function for package: ', pkg_name))
     ns <- requireNamespace(pkg_name, ...)
     mergeEnv(depends, ns)
+    assign(pkg_name, ns, envir=imports)
   }
   imports
 }
