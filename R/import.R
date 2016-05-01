@@ -1,5 +1,7 @@
 #' Merge two environments
 #'
+#' @param e1 envirnment receiving objects
+#' @param e2 environment giving objects
 #' Adapted from (http://stackoverflow.com/a/26694214/1144523)
 mergeEnv = function(e1, e2) {
   listE1 = ls(e1)
@@ -52,7 +54,7 @@ new_env_chain <- function(from) {
 #' in that changes to the Global Environment will not affect it.
 #'
 #' @param file path to source file, or code to evalue. May also be a URL.
-#' @param passed directly to source function.
+#' @param chdir passed directly to source function.
 #' @export
 #' @return the environment in which the code was evaluated
 #' @examples
