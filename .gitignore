@@ -1,3 +1,9 @@
+### Misc ###
+# Mac
+.DS_Store
+# Vim
+.*.swp
+
 ### R ###
 # History files
 .Rhistory
